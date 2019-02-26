@@ -1,2 +1,10 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+
+<%= link_to new_user_registration_path :butler => true do %>
+  <div class="btn btn-primary"> Sign up as a Butler</div>
+<% end %>
+<%= link_to new_user_registration_path :butler => false do %>
+  <div class="btn btn-primary"> Sign up as a Client</div>
+<% end %>
