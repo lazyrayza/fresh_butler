@@ -1,18 +1,7 @@
-<h1><%= @user.email %></h1>
-<p><%= @user.last_name %></p>
+<div class="container">
+  <h1><%= @user.email %></h1>
+  <h2><%= @user.first_name %></h2>
+  <p><%= @user.last_name %></p>
+  <%= link_to "Back to home page", root_path %>
+  <br>
 
-
-<%= link_to "Back to home page", root_path %>
-
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
-  </div>
-</div>

@@ -38,7 +38,7 @@ puts "finished with bookings database!"
 
 puts "creating Butlers"
 
-5.times do
+20.times do
 
   butlers = User.create!(
     first_name: Faker::Name.first_name,
