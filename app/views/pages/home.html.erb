@@ -1,5 +1,30 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-home">
+  <section class="hero" id="hero">
+    <div class="video-wrap">
+
+        <video autoplay="autoplay" muted="muted" loop="loop" poster="media/img/vid-placeholder.jpg" class="bg-video">
+
+        <source src="https://ak9.picdn.net/shutterstock/videos/19184839/preview/stock-footage--k-white-gloved-waiter-black-and-white-tuxedo-at-your-service-open-hands.webm" type="video/mp4">
+        </video>
+    </div>
+      <div class="container-text">
+        <div class="title">
+              <h1>Fresh Butler</h1>
+        </div>
+
+        <p class="lead">something cool about our service</p>
+            <a href="#" class="btn text-white">
+              SELECT BUTLER
+            </a>
+
+        </div>
+  </section>
+</div>
+
+
+
+
+<%= link_to "View all Butlers", users_path %>
 
 
 <%= link_to new_user_registration_path :butler => true do %>
