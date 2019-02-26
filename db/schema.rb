@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_02_26_113739) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.text "address"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "first_name"
     t.string "last_name"
     t.boolean "butler"
