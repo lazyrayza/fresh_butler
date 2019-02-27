@@ -11,15 +11,11 @@
 }
 
 .bg-video {
-    // height: 100vh;
+    height: 100vh;
     width: 100vw;
     overflow: hidden;
     z-index: 1;
     opacity: 1.4;
-}
-
-.container {
-    display: flex;
 }
 
 .hero-content {

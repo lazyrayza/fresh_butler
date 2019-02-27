@@ -12,19 +12,15 @@
               <h1>Fresh Butler</h1>
         </div>
 
-        <p class="lead">something cool about our service</p>
-            <a href="#" class="btn text-white">
+        <%= link_to users_path do %>
+            <div class="btn btn-primary">
               SELECT BUTLER
-            </a>
+            </div>
+            <% end %>
 
         </div>
   </section>
 </div>
-
-
-
-
-<%= link_to "View all Butlers", users_path %>
 
 
 <%= link_to new_user_registration_path :butler => true do %>
