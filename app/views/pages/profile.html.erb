@@ -9,11 +9,11 @@
         <% end %>
 
       <%if current_user.first_name == nil %>
-        <%= link_to "Finish you Profile (Name & address missing", edit_user_registration_path %>
+        <p><%= link_to "Finish you Profile", edit_user_registration_path %></p>
       <% end %>
   </div>
 <div class="avatar-box">
-  <%if current_user.first_name = "Bruce" %>
+  <%if current_user.first_name == "Bruce" %>
   <a href="https://www.instagram.com/batman.official/?hl=en"><%= image_tag("https://images.forbes.com/media/lists/fictional/2011/bruce-wayne_197x282.jpg", class: "avatar-bruce") %></a>
 
   <% end %>
