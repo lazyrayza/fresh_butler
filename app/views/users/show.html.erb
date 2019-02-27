@@ -1,8 +1,18 @@
-<div class="container">
+<div class="showbox">
+  <div class="left-box">
   <h1><%= @user.first_name %></h1>
   <p><%= @user.last_name %></p>
   <p><%= @user.email %></p>
   <%= link_to "Back to home page", root_path %>
   <br>
-
 <%= link_to "Book User", new_user_booking_path(@user) %>
+</div>
+<div class="right-box">
+  <% if @user.first_name == 'Alfred'  %>
+    <%= image_tag("https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/p-Gotham-Sean-Pertwee.jpg", class: "avatar") %>
+    <% end %>
+</div>
+</div>
+
+
+
