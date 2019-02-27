@@ -9,15 +9,26 @@
     </div>
       <div class="container-text">
         <div class="title">
-              <h1><font color="#FF9A76">Hire</font> your next butler easily.</h1>
-              <h2>Find the housekeeper of your dreams and enjoy a world of service excellence. </h2>
-
-        <%= link_to users_path do %>
-            <div class="btn btn-primary">
-              Get Started
-            </div>
+          <h1><font color="#FF9A76">Hire</font> your next butler easily.</h1>
+          <h2>Find the housekeeper of your dreams and enjoy a world of service excellence. </h2>
+          <% if current_user != nil %>
+            <%= link_to user_path(butler) do %>
+              <div class="btn btn-primary">
+                Browse A Butler
+              </div>
             <% end %>
-
+          <% else %>
+            <%= link_to new_user_registration_path :butler => true do %>
+              <div class="btn btn-primary">
+                Butler Sign Up
+              </div>
+            <% end %>
+            <%= link_to new_user_registration_path :butler => false do %>
+              <div class="btn btn-primary">
+                Client Sign Up
+              </div>
+            <% end %>
+          <% end %>
         </div>
   </section>
 </div>
