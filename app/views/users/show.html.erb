@@ -10,11 +10,16 @@
     <% end %>
 </div>
 </div>
-  <%= link_to new_user_booking_path(@user) do %><div class="btn btn-primary">Book User</div>
-  <% end %>
-  <br>
-  <%= link_to root_path do %><div class="btn btn-primary">Back to home page</div>
-  <% end %>
-
-
-
+  <div class="align-buttons">
+    <%= link_to users_path do %>
+      <div class="btn btn-secondary">
+        Back
+      </div>
+      <% end  %>
+    <%= link_to new_user_booking_path(@user) do %>
+      <div class="btn btn-primary">
+        Book
+      </div>
+      <% end %>
+    </div>
+</div>
