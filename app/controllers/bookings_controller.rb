@@ -12,11 +12,12 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @butler = User.find(params[:user_id])
   end
 
   def update
     if @bookings.update(booking_params)
-      redirect_to bookings_path(@bookings), notice: 'Booking was updated!'
+      redirect_to booking_path(@bookings), notice: 'Booking was updated!'
     else
       render :new
     end
@@ -24,9 +25,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(bookings_params)
-    @booking.user = current_user
+    @booking.client = current_user
+    @booking.butler = User.find(params[:user_id])
     if @booking.save
-      redirect_to bookings_path(@booking), notice: 'Booking has been made!'
+      redirect_to booking_path(@booking), notice: 'Booking has been made!'
     else
       render :new
     end
