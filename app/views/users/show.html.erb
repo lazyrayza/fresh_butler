@@ -2,7 +2,16 @@
   <h1><%= @user.first_name %></h1>
   <p><%= @user.last_name %></p>
   <p><%= @user.email %></p>
-  <%= link_to "Back to home page", root_path %>
-  <br>
-
-<%= link_to "Book User", new_user_booking_path(@user) %>
+  <div class="align-buttons">
+    <%= link_to users_path do %>
+      <div class="btn btn-secondary">
+        Back
+      </div>
+      <% end  %>
+    <%= link_to new_user_booking_path(@user) do %>
+      <div class="btn btn-primary">
+        Book
+      </div>
+      <% end %>
+    </div>
+</div>

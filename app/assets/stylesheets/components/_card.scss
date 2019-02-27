@@ -2,9 +2,11 @@
   height: 200px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
+  filter:opacity(80%);
   background-position: center;
   color: white;
   position: relative;
+  border-radius: 8px;
 }
 .card-description {
   position: absolute;
@@ -12,7 +14,13 @@
   left: 10px;
 }
 .card-description h2 {
+  font-size: 36px;
+  margin: 0;
+}
+.card-description p {
+  font-family: $headers-font;
   font-size: 24px;
+  margin: 0;
 }
 .card-link {
   position: absolute;
