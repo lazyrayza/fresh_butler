@@ -5,7 +5,7 @@
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>');">
           <div class="card-description">
             <%# image_tag "https://source.unsplash.com/featured/?{waiter} #{ (1..100000).to_a.sample}"%>
-            <h2><%= butler.first_name %></h2>
+            <p><%= butler.first_name %></p>
             <h2><%= butler.last_name %></h2>
           </div>
           <%= link_to "View", user_path(butler), class: 'card-link' %>
