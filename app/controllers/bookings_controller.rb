@@ -16,8 +16,8 @@ class BookingsController < ApplicationController
   end
 
   def update
-    if @bookings.update(booking_params)
-      redirect_to booking_path(@bookings), notice: 'Booking was updated!'
+    if @booking.update(bookings_params)
+      redirect_to booking_path(@booking), notice: 'Booking was updated!'
     else
       render :new
     end
@@ -35,6 +35,8 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    # @booking = current_user.client_bookings
+     # @butler = @booking.butler
   end
 
   def destroy
