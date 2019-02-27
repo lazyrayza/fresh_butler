@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+
+h1 {
+  color: #FF8559;
+}
+
+.container-text {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 30vh;
+}
