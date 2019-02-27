@@ -42,7 +42,7 @@ before_action :find_user, only: [:show, :update, :destroy, :edit]
   private
 
   def users_params
-    params.require(:booking).permit(:first_name, :last_name, :butler)
+    params.require(:user).permit(:first_name, :last_name, :butler)
   end
 
   def find_user

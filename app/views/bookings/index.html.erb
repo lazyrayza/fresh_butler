@@ -1,7 +1,33 @@
-<% @bookings.each do |booking| %>
-  <h3>Butler: <%= booking.butler.full_name %></h3>
-  <h3>Start date: <%= booking.start_date %></h3>
-  <h3>End date: <%= booking.end_date %></h3>
-
-  <%= link_to "View booking", booking_path(booking) %>
-<% end %>
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+      <h3>Bookings</h3>
+        <table class="table table-bordered">
+          <tbody>
+            <thead>
+              <th>Butler</th>
+              <th>Starting Date</th>
+              <th>Ending Date</th>
+              <th>Starting In</th>
+              <th>Duration</th>
+              <th>View</th>
+              <th>Delete</th>
+            </thead>
+            <% @bookings.each do |booking| %>
+              <tr>
+                <td><%= booking.butler.full_name %></td>
+                <td><%= booking.start_date %></td>
+                <td><%= booking.end_date %></td>
+                <td><%= (booking.start_date - Date.today).to_i  %></td>
+                <td><%= (booking.end_date - booking.start_date).to_i  %></td>
+                <td><%= link_to "View booking", booking_path(booking) %></td>
+                <td>
+                  <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="fa fa-trash destroy_dose"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+</div>
