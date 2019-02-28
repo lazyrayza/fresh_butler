@@ -17,7 +17,7 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
 
-    <%= f.hidden_field :butler, value: "true"  %>
+    <%= f.input :butler, as: :hidden, input_html: { value: params[:butler] == "true" } %>
   </div>
 
   <div class="form-actions">

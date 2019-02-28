@@ -22,6 +22,11 @@ before_action :find_user, only: [:show, :update, :destroy, :edit]
 
   def create
     @user = User.new(users_params)
+    if @user.save
+      redirect_to user_session_path(@user), notice: 'User has been made!'
+    else
+      render :new
+    end
   end
 
   def edit

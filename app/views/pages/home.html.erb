@@ -22,13 +22,13 @@
                 Client Sign Up
               </div>
             <% end %>
-          <% elsif current_user.butler == true %>
+          <% elsif current_user.butler %>
             <%= link_to profile_path do %>
               <div class="btn btn-primary">
                 View my profile
               </div>
             <% end %>
-          <% elsif current_user.butler == false %>
+          <% else %>
             <%= link_to users_path do %>
             <div class="btn btn-primary">
                 Browse a butler
