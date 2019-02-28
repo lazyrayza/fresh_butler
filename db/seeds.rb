@@ -7,7 +7,7 @@ User.destroy_all
 
 puts 'Creating Users database...'
 
-25.times do
+5.times do
   users = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -38,12 +38,12 @@ puts "finished with bookings database!"
 
 puts "creating Butlers"
 
-20.times do
+10.times do
 
   butlers = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    address: Faker::Address.full_address,
+    address: Faker::Address.state,
     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
     email: Faker::Internet.email,
     password: Faker::Internet.password,
@@ -51,6 +51,13 @@ puts "creating Butlers"
     )
 end
 
-puts "finished with butler creation!"
+
+
+
+
+
+
+
+
 
 

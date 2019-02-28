@@ -4,6 +4,16 @@ before_action :find_user, only: [:show, :update, :destroy, :edit]
   def index
     #authorization to check if user or not to see all butlers
     @butlers = User.where(butler: true)
+    @butlers = @butlers.select{ |butler| butler.latitude != nil && butler.longitude != nil}
+
+    @markers = @butlers.map do |butler|
+      {
+        lng: butler.longitude,
+        lat: butler.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { butler: butler }),
+        image_url: helpers.asset_url('butler.png')
+      }
+    end
   end
 
   def show

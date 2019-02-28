@@ -1,16 +1,27 @@
-<div class="container">
-  <div class="row">
-    <% @butlers.each do |butler| %>
-      <div class="col-xs-12 col-sm-6 col-md-3" style="padding: 10px">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>');">
-          <div class="card-description">
-            <p><%= butler.first_name %></p>
-            <h2><%= butler.last_name %></h2>
+<div class="big-box">
+  <div class="container-holder">
+    <div class="row">
+      <% @butlers.each do |butler| %>
+        <div class="col-sm-4" style="padding: 10px">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>');">
+            <div class="card-description">
+              <p><%= butler.first_name %></p>
+              <h2><%= butler.last_name %></h2>
+                <%= link_to "View", user_path(butler), class: 'card-link' %>
+            </div>
           </div>
-          <%= link_to "View", user_path(butler), class: 'card-link' %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-  </div>
+
+    <div id="map"
+    style="width: 40%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    >
+    </div>
 </div>
+
+    <%= link_to "Home", root_path, class: "btn btn-2" %>
