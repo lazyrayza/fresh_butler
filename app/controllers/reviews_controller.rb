@@ -4,6 +4,8 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @review = Review.find(params[:id])
+
   end
 
   def new
@@ -12,10 +14,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new
+    @review = Review.new(review_params)
     @review.client = current_user
     @review.butler = User.find(params[:user_id])
-    if review.save
+    @butler = User.find(params[:user_id])
+    if @review.save
       redirect_to review_path(@review), notice: "Thanks for the feedback!"
     else
       render :new
@@ -25,6 +28,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:description)
+    params.require(:review).permit(:description, :rating)
   end
 end
