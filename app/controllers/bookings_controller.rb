@@ -16,8 +16,16 @@ class BookingsController < ApplicationController
   end
 
   def update
+    # @butler = User.find(params[:user_id])
     if @booking.update(bookings_params)
       redirect_to booking_path(@booking), notice: 'Booking was updated!'
+
+    # elsif client books && @butler declines
+    # redirect_to booking_path(@booking), notice: 'Booking has been declined'
+
+    # elsif @booking.update(bookings_params) || @butler has not made an action
+    # redirect_to booking_path(@booking), notice: 'Pending booking'
+
     else
       render :new
     end
