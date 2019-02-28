@@ -49,6 +49,10 @@ before_action :find_user, only: [:show, :update, :destroy, :edit]
     redirect_to new_user_session_path
   end
 
+  def article_params
+    params.require(:article).permit(:title, :body, :photo)
+  end
+
   private
 
   def users_params

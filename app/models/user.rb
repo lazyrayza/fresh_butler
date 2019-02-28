@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :butler_bookings, class_name: :Booking, foreign_key: "butler_id", dependent: :destroy
@@ -12,7 +13,6 @@ class User < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
   def full_name
     first_name + " " + last_name
   end
