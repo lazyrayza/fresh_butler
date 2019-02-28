@@ -12,62 +12,14 @@ h1 {
   padding-top: 30vh;
 }
 
-.btn-primary {
-  border-radius: 4px;
-}
-
 .fab {
   color: #ff9a76;
 }
-
-.home-btn {
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  font-size: 24px;
-  border-radius: 4px;
-  width: 335px;
-  margin-top: 50px;
-  background-color: #ff9a76;
-}
-
-.home-btn:hover {
-  background-color: transparent;
-  border: 1.5px solid;
-  color: white;
-  text-decoration: none !important;
-  position: relative;
-  color: #ff9a76;
-}
-
-// .home-btn a {
-//   text-decoration: none !important;
-// }
-
-.home-btn:link {
-  text-decoration: none !important;
-}
-
-.centered {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
 
 .h2-shadow {
   text-shadow: 4px 4px 4px 4px;
 }
 
-.blink {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
+a {
+  text-decoration: none;
 }
