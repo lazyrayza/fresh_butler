@@ -10,31 +10,33 @@
       <div class="container-text">
         <div class="title">
           <h1><font color="#FF9A76">Hire</font> your next butler easily</h1>
-          <h2>Find the housekeeper of your dreams and enjoy a world of service excellence </h2>
-          <% if !user_signed_in? %>
-            <%= link_to new_user_registration_path :butler => true do %>
-              <div class="btn btn-primary">
-                Butler Sign Up
+          <h2 class="h2-shadow">Find the housekeeper of your dreams and enjoy a world of service excellence </h2>
+          <div class="centered">
+            <% if !user_signed_in? %>
+                <div class="btn btn-primary">
+                  Butler Sign Up
+
+                </div>
+              <%= link_to new_user_registration_path :butler => false do %>
+                <div class="btn btn-primary">
+                  Client Sign Up
+                </div>
+              <% end %>
+            <% elsif current_user.butler %>
+              <%= link_to profile_path do %>
+                <div class="btn btn-primary">
+                  View my profile
+                </div>
+              <% end %>
+            <% else %>
+              <div class="home-btn">
+                  Browse a butler
+                  <%= link_to new_user_registration_path :butler => true, class: "blink" do %>
+                  <% end %>
               </div>
             <% end %>
-            <%= link_to new_user_registration_path :butler => false do %>
-              <div class="btn btn-primary">
-                Client Sign Up
-              </div>
-            <% end %>
-          <% elsif current_user.butler %>
-            <%= link_to profile_path do %>
-              <div class="btn btn-primary">
-                View my profile
-              </div>
-            <% end %>
-          <% else %>
-            <%= link_to users_path do %>
-            <div class="btn btn-primary">
-                Browse a butler
-            </div>
-            <% end %>
-          <% end %>
+
+          </div>
         </div>
   </section>
 </div>
