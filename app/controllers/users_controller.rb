@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 before_action :find_user, only: [:show, :update, :destroy, :edit]
 
   def index
-    #authorization to check if user or not to see all butlers
     @butlers = User.where(butler: true)
   end
 
