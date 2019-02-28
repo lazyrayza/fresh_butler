@@ -3,6 +3,9 @@ class ReviewsController < ApplicationController
     @reviews = Review.All
   end
 
+  def show
+  end
+
   def new
     @review = Review.new
     @butler = User.find(params[:user_id])
