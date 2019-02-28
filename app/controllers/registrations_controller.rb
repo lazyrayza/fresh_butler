@@ -1,7 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
-  protected
+  private
 
-  def after_update_path_for(resource)
-    user_path(resource)
+  def after_update_path_for(*)
+    flash[:notice] = "Account succesfully updated"
+    profile_path
   end
 end

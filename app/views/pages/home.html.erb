@@ -11,13 +11,7 @@
         <div class="title">
           <h1><font color="#FF9A76">Hire</font> your next butler easily</h1>
           <h2>Find the housekeeper of your dreams and enjoy a world of service excellence </h2>
-          <% if current_user != nil %>
-            <%= link_to users_path do %>
-              <div class="btn btn-primary">
-                Browse a Butler
-              </div>
-            <% end %>
-          <% else %>
+          <% if !user_signed_in? %>
             <%= link_to new_user_registration_path :butler => true do %>
               <div class="btn btn-primary">
                 Butler Sign Up
@@ -27,6 +21,18 @@
               <div class="btn btn-primary">
                 Client Sign Up
               </div>
+            <% end %>
+          <% elsif current_user.butler %>
+            <%= link_to profile_path do %>
+              <div class="btn btn-primary">
+                View my profile
+              </div>
+            <% end %>
+          <% else %>
+            <%= link_to users_path do %>
+            <div class="btn btn-primary">
+                Browse a butler
+            </div>
             <% end %>
           <% end %>
         </div>
