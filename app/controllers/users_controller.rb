@@ -3,6 +3,15 @@ before_action :find_user, only: [:show, :update, :destroy, :edit]
 
   def index
     @butlers = User.where(butler: true)
+    @butlers = @butlers.select{ |butler| butler.latitude != nil && butler.longitude != nil}
+    @markers = @butlers.map do |butler|
+      {
+        lng: butler.longitude,
+        lat: butler.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { butler: butler }),
+        image_url: helpers.asset_url('butler.png')
+      }
+    end
   end
 
   def show
@@ -35,6 +44,10 @@ before_action :find_user, only: [:show, :update, :destroy, :edit]
   def destroy
     @user.destroy
     redirect_to new_user_session_path
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :body, :photo)
   end
 
   private

@@ -7,18 +7,23 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
     <p class="notice" style = "margin: 0";><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div style="min-height: calc(100vh - 179px)">
+    <div style="min-height: calc(100vh - 1px)">
       <%= yield %>
     </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= render 'shared/footer' %>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
