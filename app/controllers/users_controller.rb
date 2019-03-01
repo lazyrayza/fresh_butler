@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 before_action :find_user, only: [:show, :update, :destroy, :edit]
 
   def index
-    #authorization to check if user or not to see all butlers
     @butlers = User.where(butler: true)
     @butlers = @butlers.select{ |butler| butler.latitude != nil && butler.longitude != nil}
 
@@ -25,14 +24,13 @@ before_action :find_user, only: [:show, :update, :destroy, :edit]
 
   def update
     if @user.update(users_params)
-      redirect_to user_session_path(@user), notice: 'User was updated!'
+      redirect_to profile_path, notice: 'User was updated!'
     else
       render :new
     end
   end
 
   def create
-    #authorization to check if butler or not
     @user = User.new(users_params)
     if @user.save
       redirect_to user_session_path(@user), notice: 'User has been made!'
