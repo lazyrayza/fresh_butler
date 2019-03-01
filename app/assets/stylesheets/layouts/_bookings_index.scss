@@ -1,0 +1,11 @@
+.bookings-table {
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+  color: $main-color;
+  &:hover {
+    color: #000000;
+  }
+}
