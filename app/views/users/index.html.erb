@@ -28,7 +28,7 @@
                   <h2><%= butler.full_name %></h2>
                   <p><%= butler.address %></p>
                   <p>Butler description</p>
-                  <%# cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+                  <% cl_image_tag butler.photo, height: 100, width: 100, crop: :fill %>
                   <%= link_to "View", user_path(butler), class: 'card-link' %>
                 </div>
               </div>
