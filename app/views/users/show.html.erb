@@ -5,6 +5,19 @@
     <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     <p><strong>Email:</strong> <%= @user.email %></p>
     <p><strong>Bio:</strong> <%= @user.description%></p>
+    <table class="table table-bordered">
+          <tbody>
+            <thead>
+              <th>Skills</th>
+              <th>Language</th>
+              </thead>
+              <tr>
+                <td> <%= @user.skills%></td>
+                <td> <%= @user.languages%></td>
+                </tr>
+          </tbody>
+      </table>
+
   <h2> Average Ratings:
   <% numreviews = @user.butler_reviews.count %>
                     <% if numreviews != 0 %>
