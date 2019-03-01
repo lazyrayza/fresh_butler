@@ -29,7 +29,8 @@ Booking.destroy_all
     start_date: Faker::Date.backward(rand(1..15)),
     end_date: Faker::Date.forward(rand(16..25)),
     butler_id: User.all.sample.id,
-    client_id: User.all.sample.id
+    client_id: User.all.sample.id,
+    description: Faker::Name.first_name
     )
 end
 
