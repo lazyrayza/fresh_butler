@@ -4,4 +4,11 @@ class Booking < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :description, presence: true
+
+  def end_date_cannot_be_in_the_past
+    if end_date.present? && end_date < Date.today
+      errors.add(:end_date, "can't be in the past")
+    end
+  end
+
 end
