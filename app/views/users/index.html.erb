@@ -1,16 +1,54 @@
-<div class="container">
-  <div class="row">
-    <% @butlers.each do |butler| %>
-      <div class="col-xs-12 col-sm-6 col-md-3" style="padding: 10px">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>');">
-          <div class="card-description">
-            <p><%= butler.first_name %></p>
-            <h2><%= butler.last_name %></h2>
+<div class="big-box">
+  <div class="container-holder">
+    <div class="row">
+      <% @butlers.each do |butler| %>
+        <div class="col-sm-4" style="padding: 10px">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div data-aos="flip-left" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/featured/?{waiter}<%= (1..100000).to_a.sample %>');">
+                  <div class="card-description">
+                    <p><%= butler.first_name %></p>
+                    <h2><%= butler.last_name %></h2>
+                    <% numreviews = butler.butler_reviews.count %>
+                    <% if numreviews != 0 %>
+                      <% sum = 0 %>
+                      <% butler.butler_reviews.each do |review| %>
+                        <% sum += review.rating %>
+                      <% end %>
+                      <% stars = sum / numreviews  %>
+                      <% stars.times do %>
+                        <i class="fas fa-star stars"></i>
+                      <% end %>
+                    <% end %>
+
+                  </div>
+                </div>
+                <div class="flip-card-back">
+                  <h2><%= butler.full_name %></h2>
+                  <p><%= butler.address %></p>
+                  <p>Butler description</p>
+                  <%# cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+                  <%= link_to "View", user_path(butler), class: 'card-link' %>
+                </div>
+              </div>
+            </div>
           </div>
-          <%= link_to "View", user_path(butler), class: 'card-link' %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-  </div>
+
+    <div id="map"
+    style="width: 40%;
+    height: 800px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    >
+    </div>
 </div>
+
+    <%= link_to "Home", root_path, class: "btn btn-2" %>
+
+
+
