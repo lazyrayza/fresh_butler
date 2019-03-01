@@ -2,15 +2,27 @@
 <div class="container">
   <div class="showbox">
     <div class="left-box">
-    <h1><%= @user.first_name %></h1>
-    <p><%= @user.last_name %></p>
-    <p><%= @user.email %></p>
+    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+    <p><strong>Email:</strong> <%= @user.email %></p>
+    <p><strong>Bio:</strong> <%= @user.description%></p>
+  <h2> Average Ratings:
+  <% numreviews = @user.butler_reviews.count %>
+                    <% if numreviews != 0 %>
+                      <% sum = 0 %>
+                      <% @user.butler_reviews.each do |review| %>
+                        <% sum += review.rating %>
+                      <% end %>
+                      <% stars = sum / numreviews  %>
+                      <% stars.times do %>
+                        <i class="fas fa-star stars"></i>
+                      <% end %>
+                    <% end %>
   </div>
+  </h2>
   <div class="right-box">
-    <% if @user.first_name == 'Alfred'  %>
-      <%= image_tag("https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/p-Gotham-Sean-Pertwee.jpg", class: "avatar") %>
-      <% end %>
+      <%= cl_image_tag @user.photo, height: 200, width: 400, crop: :fill, class: "avatar" %>
   </div>
+
   </div>
     <div class="align-buttons">
       <%= link_to users_path do %>
@@ -27,3 +39,4 @@
   </div>
 <%= link_to "See reviews", user_reviews_path(@user) %>
 </div>
+

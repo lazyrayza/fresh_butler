@@ -19,7 +19,6 @@ class BookingsController < ApplicationController
     # @butler = User.find(params[:user_id])
     if @booking.update(bookings_params)
       redirect_to booking_path(@booking), notice: 'Booking was updated!'
-
     # elsif client books && @butler declines
     # redirect_to booking_path(@booking), notice: 'Booking has been declined'
 
@@ -55,7 +54,7 @@ class BookingsController < ApplicationController
   private
 
   def bookings_params
-    params.require(:booking).permit(:start_date, :end_date, :description, :user_id)
+    params.require(:booking).permit(:start_date, :end_date, :description, :user_id, :status)
   end
 
   def find_booking

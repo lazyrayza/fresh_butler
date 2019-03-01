@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_28_201555) do
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2019_03_01_130302) do
+=======
+ActiveRecord::Schema.define(version: 2019_03_01_125144) do
+>>>>>>> 1d94a7c7d73591bb5e7632b75c2ac589a727bdcc
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_02_28_201555) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+    t.boolean "status", default: false
     t.index ["butler_id"], name: "index_bookings_on_butler_id"
     t.index ["client_id"], name: "index_bookings_on_client_id"
   end
@@ -52,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_02_28_201555) do
     t.float "latitude"
     t.float "longitude"
     t.string "photo"
+    t.text "description"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
