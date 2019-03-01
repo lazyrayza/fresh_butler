@@ -33,7 +33,8 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(bookings_params)
     @booking.client = current_user
-    @booking.butler = User.find(params[:user_id])
+    @butler = User.find(params[:user_id])
+    @booking.butler = @butler
     if @booking.save
       redirect_to booking_path(@booking), notice: 'Booking has been made!'
     else
