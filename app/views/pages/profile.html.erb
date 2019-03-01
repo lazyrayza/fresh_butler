@@ -18,6 +18,6 @@
         <a href="https://www.instagram.com/batman.official/?hl=en" target="_blank"><%= image_tag("https://images.forbes.com/media/lists/fictional/2011/bruce-wayne_197x282.jpg", class: "avatar-bruce") %></a>
       <% end %>
     </div>
-    <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+
     <p><%= link_to "Edit profile", edit_user_registration_path %></p>
   </div>
