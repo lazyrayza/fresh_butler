@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   def index
     #need authorization for specific user to view his bookings
     # @user = User.find(params[:user_id])
-    @bookings = current_user.client_bookings
+    @bookings = current_user.butler ? current_user.butler_bookings : current_user.client_bookings
   end
 
   def show

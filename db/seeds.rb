@@ -35,7 +35,7 @@ puts 'Creating Bookings database...'
     butler_id: User.all.sample.id,
     client_id: User.all.sample.id,
     description: Faker::Lorem.characters(150),
-    status: true
+    status: false
     )
 end
 
