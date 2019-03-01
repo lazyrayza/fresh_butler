@@ -15,7 +15,7 @@
     </div>
     <div class="avatar-box">
       <%if current_user.first_name == "Bruce" %>
-        <a href="https://www.instagram.com/batman.official/?hl=en"><%= image_tag("https://images.forbes.com/media/lists/fictional/2011/bruce-wayne_197x282.jpg", class: "avatar-bruce") %></a>
+        <a href="https://www.instagram.com/batman.official/?hl=en" target="_blank"><%= image_tag("https://images.forbes.com/media/lists/fictional/2011/bruce-wayne_197x282.jpg", class: "avatar-bruce") %></a>
       <% end %>
     </div>
     <p><%= link_to "Edit profile", edit_user_registration_path %></p>
