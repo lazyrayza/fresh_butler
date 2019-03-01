@@ -4,7 +4,7 @@
   background: $main-color;
   color: #FFFFFF;
   border: none;
-  padding: 12px 32px;
+  padding: 8px 32px;
   border-radius: 12px;
   margin-top: 50px;
   #{$btn-primary-tags-hover} {
@@ -16,5 +16,7 @@
 .btn-secondary {
   font-family: $headers-font;
   font-size: 28px;
-  padding: 4px 32px;
+  padding: 8px 32px;
+  margin-top: 50px;
+  border-radius: 12px;
 }
