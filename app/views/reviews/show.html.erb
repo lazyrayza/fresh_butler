@@ -2,9 +2,12 @@
   <% butler = User.find(@review.butler_id) %>
   <% user = User.find(@review.client_id) %>
   <h1>Review</h1>
-  <h2><%= butler.first_name %> <%= butler.last_name %></h2>
-  <p><%= @review.rating %></p>
+  <h2>Butler: <%= butler.first_name %> <%= butler.last_name %></h2>
+  <% @review.rating.times do %>
+    <i class="fas fa-star stars"></i>
+  <% end %>
   <p> <%= @review.description %> </p>
-  <p><%= @review.created_at %></p>
-  <p><%= user.full_name %></p>
+  <p><%= @review.created_at.strftime("%Y-%m-%d") %></p>
+  <%# raise %>
+  <p>Review Made By Client: <%= user.first_name %> <%= user.last_name %></p>
 </div>

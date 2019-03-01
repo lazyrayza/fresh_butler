@@ -4,7 +4,6 @@ before_action :find_user, only: [:show, :update, :destroy, :edit]
   def index
     @butlers = User.where(butler: true)
     @butlers = @butlers.select{ |butler| butler.latitude != nil && butler.longitude != nil}
-
     @markers = @butlers.map do |butler|
       {
         lng: butler.longitude,

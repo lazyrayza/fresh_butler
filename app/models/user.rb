@@ -4,7 +4,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :butler_bookings, class_name: :Booking, foreign_key: "butler_id", dependent: :destroy
   has_many :client_bookings, class_name: :Booking, foreign_key: "client_id", dependent: :destroy
-  # validates :first_name, presence: true
+  has_many :butler_reviews, class_name: :Review, foreign_key: "butler_id"
+  # validates :first_name, presence: tru
   # validates :last_name, presence: true
   # validates :address, presence: true
   # validates :phone_number, presence: true
