@@ -56,6 +56,8 @@ puts 'Creating Butlers database...'
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     butler: true,
+    languages: Faker::ProgrammingLanguage.name,
+    skills: Faker::Esport.game,
     description: Faker::Hipster.paragraph
     )
 end
