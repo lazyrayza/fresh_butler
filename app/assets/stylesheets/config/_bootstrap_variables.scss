@@ -51,4 +51,5 @@ $border-radius-small: 2px;
 }
 
 // Override other variables below!
-$btn-primary-tags-hover: '&:active, &:focus, &:hover';
+$btn-tags-hover: '&:active, &:focus, &:hover';
+$link-tags-hover: 'a:active, a:focus, a:hover';
