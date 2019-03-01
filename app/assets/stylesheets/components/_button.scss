@@ -4,21 +4,19 @@
   background: $main-color;
   color: #FFFFFF;
   border: none;
-  padding: 4px 32px;
-  border-radius: 24px;
-  margin: 12.5px;
-
+  padding: 8px 32px;
+  border-radius: 12px;
+  margin-top: 50px;
   #{$btn-primary-tags-hover} {
      background: none;
      color: $main-color;
-     border-style: 1px solid #FFFFFF;
+     border: 1px solid $main-color;
    }
 }
-
 .btn-secondary {
   font-family: $headers-font;
   font-size: 28px;
-  padding: 4px 32px;
+  padding: 8px 32px;
+  margin-top: 50px;
+  border-radius: 12px;
 }
-
-
