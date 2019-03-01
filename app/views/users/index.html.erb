@@ -24,14 +24,6 @@
                       <% end %>
 
                     </div>
-                  </div>
-                  <div class="flip-card-back">
-                    <h2><%= butler.full_name %></h2>
-                    <p><%= butler.address %></p>
-                    <p>Butler description</p>
-                    <% cl_image_tag butler.photo, height: 100, width: 100, crop: :fill %>
-                    <%= link_to "View", user_path(butler), class: 'card-link' %>
-                  </div>
                    </div>
                 <div class="flip-card-back">
                   <h2><%= butler.full_name %></h2>
@@ -44,20 +36,21 @@
                   <% end %>
                   <%= link_to "View", user_path(butler), class: 'card-link' %>
                   </div>
+
+                </div>
               </div>
             </div>
           </div>
         <% end %>
       </div>
-    </div>
-
       <div id="map"
-    style="width: 40%;
-    height: 800px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    >
-    </div>
-</div>
-  <%= link_to "Home", root_path, class: "btn btn-2" %>
+      style="width: 40%;
+      height: 800px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      >
+      </div>
+  </div>
+
+      <%= link_to "Home", root_path, class: "btn btn-2" %>
 </div>

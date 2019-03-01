@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :butler, class_name: :User, foreign_key: 'butler_id'
   belongs_to :client, class_name: :User, foreign_key: 'client_id'
   validates :start_date, presence: true
-  validates :end_date, presence: true
+  validate :end_date_cannot_be_in_the_past
   validates :description, presence: true
 
   def end_date_cannot_be_in_the_past
@@ -11,3 +11,5 @@ class Booking < ApplicationRecord
     end
   end
 end
+
+
