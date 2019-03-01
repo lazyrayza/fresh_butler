@@ -8,7 +8,7 @@
             </thead>
             <% @reviews.each do |review| %>
               <tr>
-                <td><%= review.client.full_name %></td>
+                <td><%= review.client.first_name %> <%= review.client.first_name %></td>
                 <% if review.description.length <= 15 %>
                 <td><%= review.description %></td>
                 <% else %>
