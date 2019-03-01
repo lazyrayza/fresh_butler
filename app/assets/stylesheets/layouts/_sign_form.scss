@@ -1,0 +1,24 @@
+.banner-image img {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  filter:opacity(85%);
+}
+
+.sign-forms {
+  position: absolute;
+  top: 270px;
+  left: 38%;
+  box-sizing: border-box;
+  width: 24%;
+  padding: 16px 8px;
+}
+
+.logo-signup {
+  text-align: center;
+}
+
+.logo-signup img {
+  width: 75%;
+}

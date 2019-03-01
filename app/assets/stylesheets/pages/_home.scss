@@ -3,7 +3,6 @@
 h1 {
   color: #ff9a76;
   font-size: 72px;
-  font-style: italic;
 }
 
 .container-text {
@@ -13,10 +12,14 @@ h1 {
   padding-top: 30vh;
 }
 
-.btn-primary {
-  border-radius: 4px;
-}
-
 .fab {
   color: #ff9a76;
+}
+
+.h2-shadow {
+  text-shadow: 4px 4px 4px 4px;
+}
+
+a {
+  text-decoration: none;
 }

@@ -20,24 +20,31 @@ end
 
 puts 'Finished with Users database!'
 
-puts "creating bookings"
+puts '####################################'
+
+puts 'Cleaning Bookings database...'
 Booking.destroy_all
 
+
 20.times do
+
+puts 'Creating Bookings database...'
 
   bookings = Booking.create!(
     start_date: Faker::Date.backward(rand(1..15)),
     end_date: Faker::Date.forward(rand(16..25)),
     butler_id: User.all.sample.id,
     client_id: User.all.sample.id,
-    description: Faker::Lorem.characters(150)
+    description: Faker::Lorem.characters(150),
+    status: true
     )
 end
 
-puts "finished with bookings database!"
+puts 'Finished with Bookings database!'
 
+puts '####################################'
 
-puts "creating Butlers"
+puts 'Creating Butlers database...'
 
 25.times do
 
@@ -57,6 +64,7 @@ puts "reviews Butlers"
 
 20.times do
 
+
   reviews = Review.create!(
     description: Faker::Lorem.characters(150) ,
     rating: rand(1..5),
@@ -64,6 +72,7 @@ puts "reviews Butlers"
     client_id: User.all.sample.id
     )
 end
+puts 'All done!'
 
 puts "finished with reviews !"
 

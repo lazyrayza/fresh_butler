@@ -3,7 +3,7 @@ before_action :find_user, only: [:show, :update, :destroy, :edit]
 
   def index
     @butlers = User.where(butler: true)
-    @butlers = @butlers.select{ |butler| butler.latitude != nil && butler.longitude != nil}
+    @butlers = @butlers.select { |butler| butler.latitude != nil && butler.longitude != nil }
     @markers = @butlers.map do |butler|
       {
         lng: butler.longitude,
@@ -32,7 +32,7 @@ before_action :find_user, only: [:show, :update, :destroy, :edit]
   def create
     @user = User.new(users_params)
     if @user.save
-      redirect_to user_session_path(@user), notice: 'User has been made!'
+      redirect_to "/", notice: 'User has been made!'
     else
       render :new
     end

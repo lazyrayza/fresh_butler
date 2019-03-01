@@ -11,11 +11,13 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
-     <p class="notice" style = "margin: 0";><%= notice %></p>
-     <p class="alert"><%= alert %></p>
+    <p class="notice" style = "margin: 0";><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div style="min-height: calc(100vh - 1px)">
+      <%= yield %>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= render 'shared/footer' %>
