@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_03_01_130302) do
-=======
-ActiveRecord::Schema.define(version: 2019_03_01_125144) do
->>>>>>> 1d94a7c7d73591bb5e7632b75c2ac589a727bdcc
+ActiveRecord::Schema.define(version: 2019_03_01_152449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +54,8 @@ ActiveRecord::Schema.define(version: 2019_03_01_125144) do
     t.float "longitude"
     t.string "photo"
     t.text "description"
+    t.string "skills"
+    t.string "languages"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
