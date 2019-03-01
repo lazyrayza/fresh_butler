@@ -28,8 +28,11 @@
                   <div class="flip-card-back">
                     <h2><%= butler.full_name %></h2>
                     <p><%= butler.address %></p>
-                    <p>Butler description</p>
-                    <% cl_image_tag butler.photo, height: 100, width: 100, crop: :fill %>
+                    <% if butler.photo.url.nil? %>
+                  <%= image_tag "https://www.shareicon.net/data/128x128/2016/09/01/822739_user_512x512.png", class: "avatar-small" %>
+                  <% else %>
+                  <%= cl_image_tag butler.photo, height: 40, width: 40, crop: :fill, class: "avatar-small" %>
+                  <% end %>
                     <%= link_to "View", user_path(butler), class: 'card-link' %>
                   </div>
                 </div>
